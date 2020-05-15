@@ -279,6 +279,38 @@ Alternatives can be used as part of the choice text of an option. However, to av
     -> GreetShoppers
 ```
 
+## (Advanced) Using LIST and LIST_RANDOM to create your shuffling content
+
+[Full code is here](../examples/storyletManager.ink)
+
+[Explanation of LIST](../Chapter11/index.md)
+
+A basic explanation of list is required to fully understand how that works. If you want to just use it, go ahead, read the full code. Do your tests. 
+
+A list in ink is more like a set. It will hold only one element, and you can do several action on it.
+
+Crash course on list in ink to understand a bit more the following:
+```ink
+//Declaring it
+LIST content = specialContent
+VAR availableContent = ()
+
+// Adding a new element
+~ availableContent += specialContent
+
+// Removing an element
+~ availableContent -= specialContent
+
+//Getting one element random
+~ LIST_RANDOM(availableContent)
+```
+
+The idea behind this script is that you have a variable that will hold the door to all the random element you want to present to the player. Each will have a name defined in the LIST (or in multiples LIST to clean up a bit)
+
+To present the player with a random element, Pick the random element with the random function for the list. It will grab one element from the list. As the list holds only content that is safe for the player, it is safe to play
+
+
+
 ---
 
 ## Try It
